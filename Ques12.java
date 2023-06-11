@@ -1,30 +1,30 @@
-package Assignment1;
+package assignment3;
 
 public class Ques12 {
 
-	static String hash(String str) {
-		if(str.length()== 1)
-			return str;
-		
-		String ans= hash(str.substring(1));				//small problem
-		if(str.charAt(0)== ans.charAt(0))
-			ans= ans.charAt(0)+"#"+ans.substring(1);			//not str.charAT(0)+"#"+str.substring(2), as str don't store previous changes
-		else
-			ans= str.charAt(0)+ans;
-		return ans;
+	static void star(int n) {
+		if(n==0)
+			return;
+		System.out.print("*");
+		star(n-1);
 	}
 	
-	static void hash(String str, String ans) {
-		if(str.length()==0) {
-			System.out.println(ans);
+	static void rightPascal(int row, int constant) {
+		if(row==0)
 			return;
-		}
+		star(constant-row+1);
+		System.out.println();
 		
-			
+		rightPascal(row-1,constant);
+		
+		if(row==1)
+			return;
+		star(constant-row+1);
+		System.out.println();
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(hash("aabbcc"));
+		rightPascal(5,5);
 	}
 
 }

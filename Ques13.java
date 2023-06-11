@@ -1,6 +1,6 @@
 package assignment3;
 
-public class Ques5 {
+public class Ques13 {
 
 	static void space(int n) {
 		if(n==0)
@@ -16,18 +16,24 @@ public class Ques5 {
 		star(n-1);
 	}
 	
-	static void rightPyramid(int row, int constant) {
+	static void leftPascal(int row, int constant) {
 		if(row==0)
 			return;
 		space(row-1);
 		star(constant-row+1);
 		System.out.println();
 		
-		rightPyramid(row-1,constant);
+		leftPascal(row-1,constant);
+		
+		if(row==1)
+			return;
+		space(row-1);
+		star(constant-row+1);
+		System.out.println();
 	}
 	
 	public static void main(String[] args) {
-		rightPyramid(5,5);
+		leftPascal(5,5);
 	}
 
 }

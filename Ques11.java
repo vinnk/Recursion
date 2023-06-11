@@ -1,14 +1,15 @@
-package Assignment1;
+package assignment3;
 
 public class Ques11 {
 
-	static int[] modify(int[] arr, int i, int change, int val) {
-		
+	static void cross(int row, int col) {
+		if(row==0)
+			return;
+		space()
 	}
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		cross(3,0);
 	}
 
 }

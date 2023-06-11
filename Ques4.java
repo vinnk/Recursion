@@ -1,27 +1,22 @@
-package assignment2;
+package assignment3;
 
 public class Ques4 {
 
-	static double[] employee(double[] salary, int i, int count) {
-		if(i==salary.length) {
-			double[] result= new double[count];
-			return result;
+	static void invertedHalfPy(int row, int col) {
+		if(row==0)
+			return;
+		if(row>col) {
+			System.out.print("*");
+			invertedHalfPy(row,col+1);
 		}
-		double[] result= employee(salary,i+1,count+1);
-		double tax= 0.1*salary[i];
-		//tax+= salary[i];
-		result[i]= salary[i] + tax;
-		return result;
+		else {
+			System.out.println();
+			invertedHalfPy(row-1,0);
+		}
 	}
 	
 	public static void main(String[] args) {
-		double[] salary= {10000, 348897, 42300};
-		double[] result= employee(salary,0,0);
-		System.out.println("salary+tax: ");
-		
-		for(int i=0;i<result.length;i++) {
-			System.out.print(result[i]+"\t");;
-		}
+		invertedHalfPy(5,0);
 	}
 
 }

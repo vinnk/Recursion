@@ -1,25 +1,33 @@
-package Assignment1;
+package assignment3;
 
 public class Ques7 {
 
-	static int reverse(int num, int len) {
-		if(num/10==0)
-			return num%10;
-		return (num%10)*(int)Math.pow(10, len-1) + reverse(num/10, len-1); 
+	static void space(int n) {
+		if(n==0)
+			return;
+		System.out.print(" ");
+		space(n-1);
 	}
 	
-	static void reverse(int num, int len, int rev) {
-		if(num==0) {
-			System.out.println(rev);
+	static void star(int n) {
+		if(n==0)
 			return;
-		}
-		rev= rev + (num%10)*(int)Math.pow(10, len-1);
-		reverse(num/10, len-1, rev);
+		System.out.print("* ");
+		star(n-1);
+	}
+	
+	static void pyramid(int row, int constant) {
+		if(row==0)
+			return;
+		space(row-1);
+		star(constant-row+1);
+		System.out.println();
+		
+		pyramid(row-1,constant);
 	}
 	
 	public static void main(String[] args) {
-		reverse(369,3,0);
-		System.out.println(reverse(123, 3));
+		pyramid(5,5);
 	}
 
 }
